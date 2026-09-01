@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hope Meals</title>
+
+	<!-- Your Stylesheets -->
+	<link rel="stylesheet" href="home.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="chatbot/chatbot.css">
+</head>
+
+<body>
+	<header>
+		<div class="logo">Hope <b style="color: #06C167;">Meals</b></div>
+		<div class="hamburger">
+			<div class="line"></div>
+			<div class="line"></div>
+			<div class="line"></div>
+		</div>
+		<nav class="nav-bar">
+			<ul>
+				<li><a href="home.html">Home</a></li>
+				<li><a href="about.html">About</a></li>
+				<li><a href="contact.html" class="active">Contact</a></li>
+				<li><a href="profile.php">Profile</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<script>
+		const hamburger = document.querySelector(".hamburger");
+		hamburger.onclick = function () {
+			const navBar = document.querySelector(".nav-bar");
+			navBar.classList.toggle("active");
+		};
+	</script>
+
+	<section class="cover"></section>
+
+	<p class="heading" style="margin: 20px;">Contact Us</p>
+
+	<div class="contact-form" style="padding: 20px;">
+		<form action="feedback.php" method="post">
+			<label for="name">Name:</label><br>
+			<input type="text" id="name" name="name" required><br><br>
+
+			<label for="email">Email:</label><br>
+			<input type="email" id="email" name="email" required><br><br>
+
+			<label for="message">Message:</label><br>
+			<textarea id="message" name="message" rows="4" required></textarea><br><br>
+
+			<input type="submit" value="Send Message" name="feedback">
+		</form>
+	</div>
+
+	<div class="contact-info" style="padding: 10px;">
+		<p>Email: hopemeals@gmail.com</p>
+		<p>Phone: (+91) 9876 432 100</p>
+		<p>Address: A.C. Patil College of Engineering</p>
+	</div>
+
+	<!-- Chatbot and FAQs Section -->
+	<div class="chatbot" style="padding: 30px; background-color: rgba(151, 243, 199, 0.5);">
+		<p style="font-size: 23px; text-align: center;">Chat Bot Support <img src="bot-mini.png" alt="" height="20"></p>
+
+		<div id="container" class="container">
+			<div id="chat" class="chat">
+				<div id="messages" class="messages"></div>
+				<input id="input" type="text" placeholder="Say something..." autocomplete="off" />
+			</div>
+		</div>
+
+		<div class="help">
+			<p style="font-size: 23px; text-align: center; padding:10px;">Help & FAQs?</p>
+
+			<button class="accordion">How to donate food?</button>
+			<div class="panel">
+				<p>1) Click on <a href="fooddonate.html">Donate</a> on the home page</p>
+				<p>2) Fill in the details</p>
+				<p>3) Click on submit</p>
+				<img src="img/mobile.jpg" alt="" width="100%">
+			</div>
+
+			<button class="accordion">How will my donation be used?</button>
+			<div class="panel">
+				<p style="padding: 10px;">Your donation supports our mission and helps provide meals to those in need. More info is available on our website.</p>
+			</div>
+
+			<button class="accordion">What if my donation is expired?</button>
+			<div class="panel">
+				<p style="padding: 10px;">We cannot accept expired food. Please check expiration dates or contact us for guidance.</p>
+			</div>
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<script src="chatbot/chatbot.js"></script>
+	<script src="chatbot/constants.js"></script>
+	<script src="chatbot/speech.js"></script>
+
+	<!-- Accordion Script -->
+	<script>
+		const acc = document.getElementsByClassName("accordion");
+		for (let i = 0; i < acc.length; i++) {
+			acc[i].addEventListener("click", function () {
+				this.classList.toggle("active");
+				const panel = this.nextElementSibling;
+				panel.style.maxHeight ? panel.style.maxHeight = null : panel.style.maxHeight = panel.scrollHeight + "px";
+			});
+		}
+	</script>
+</body>
+</html>
