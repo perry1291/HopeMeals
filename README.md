@@ -1,4 +1,4 @@
-# HopeMeals 🍱
+# 🍱 HopeMeals 
 
 HopeMeals is a web-based food donation and management system designed to streamline the process of donating food and managing its distribution. The platform brings together users, administrators, and delivery personnel in one system, with features like authentication, food donation forms, feedback collection, profile management, and an integrated chatbot.
 
